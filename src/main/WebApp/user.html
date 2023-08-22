@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User View</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>User View</h1>
+
+    <h2>Create Reimbursement Claim</h2>
+    <form id="claim-form">
+        <label for="trip-date">Trip Date:</label>
+        <input type="date" id="trip-date" name="trip-date" required><br>
+
+        <label for="receipt-type">Receipt Type:</label>
+        <select id="receipt-type" name="receipt-type">
+            <option value="Taxi">Taxi</option>
+            <option value="Hotel">Hotel</option>
+            <!-- Add more receipt types here -->
+        </select><br>
+
+        <label for="receipt-amount">Receipt Amount:</label>
+        <input type="number" id="receipt-amount" name="receipt-amount" required><br>
+
+        <label for="number-of-days">Number of Days:</label>
+        <input type="number" id="number-of-days" name="number-of-days"><br>
+
+        <label for="driven-distance">Driven Distance (km):</label>
+        <input type="number" id="driven-distance" name="driven-distance"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Total Reimbursement</h2>
+    <p id="total-reimbursement">Total Reimbursement: $0.00</p>
+</div>
+<script src="user-script.js"></script>
+</body>
+</html>

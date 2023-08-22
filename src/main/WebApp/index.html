@@ -1,69 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Business Trip Reimbursement</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Business Trip Reimbursement</h1>
+<div class="login-container">
+  <h1>Login</h1>
+  <form id="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
 
-<!-- End User View -->
-<div id="userView">
-  <h2>End User View</h2>
-  <form id="userForm">
-    <label for="tripDate">Trip Date:</label>
-    <input type="date" id="tripDate" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
 
-    <label for="receiptType">Select Receipt Type:</label>
-    <select id="receiptType">
-      <option value="taxi">Taxi</option>
-      <option value="hotel">Hotel</option>
-      <option value="plane">Plane Ticket</option>
-      <!-- Add more receipt types here -->
-    </select><br><br>
-
-    <label for="receiptAmount">Receipt Amount:</label>
-    <input type="number" id="receiptAmount" step="0.01" required><br><br>
-
-    <label for="numberOfDays">Number of Days:</label>
-    <input type="number" id="numberOfDays" required><br><br>
-
-    <label for="drivenDistance">Driven Distance (km):</label>
-    <input type="number" id="drivenDistance" step="0.01" required><br><br>
-
-    <button type="button" id="calculateButton">Calculate Reimbursement</button>
-    <br><br>
-
-    <label for="totalReimbursement">Total Reimbursement:</label>
-    <input type="text" id="totalReimbursement" readonly>
+    <button type="submit">Login</button>
   </form>
 </div>
-
-<!-- Administrator View -->
-<div id="adminView">
-  <h2>Administrator View</h2>
-  <form id="adminForm">
-    <label for="dailyAllowanceRate">Daily Allowance Rate ($/day):</label>
-    <input type="number" id="dailyAllowanceRate" step="0.01" value="15"><br><br>
-
-    <label for="mileageRate">Mileage Rate ($/km):</label>
-    <input type="number" id="mileageRate" step="0.01" value="0.3"><br><br>
-
-    <label for="receiptTypes">Available Receipt Types:</label>
-    <select id="receiptTypes" multiple>
-      <option value="taxi">Taxi</option>
-      <option value="hotel">Hotel</option>
-      <option value="plane">Plane Ticket</option>
-      <!-- Add more receipt types here -->
-    </select><br><br>
-
-    <label for="reimbursementLimit">Reimbursement Limit:</label>
-    <input type="number" id="reimbursementLimit" step="0.01"><br><br>
-
-    <button type="button" id="saveAdminSettings">Save Settings</button>
-  </form>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
