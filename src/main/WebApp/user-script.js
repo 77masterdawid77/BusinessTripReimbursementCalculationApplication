@@ -1,27 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const claimForm = document.getElementById("claim-form");
-    const totalReimbursement = document.getElementById("total-reimbursement");
+    // ... (existing code)
 
-    claimForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+    const savedDetailsBox = document.getElementById("savedDetailsBox");
+    const saveDetailsButton = document.getElementById("saveDetailsButton");
+    const clearDetailsButton = document.getElementById("clearDetailsButton");
 
-        const tripDate = document.getElementById("trip-date").value;
-        const receiptType = document.getElementById("receipt-type").value;
-        const receiptAmount = parseFloat(document.getElementById("receipt-amount").value);
-        const numberOfDays = parseInt(document.getElementById("number-of-days").value) || 0;
-        const drivenDistance = parseFloat(document.getElementById("driven-distance").value) || 0;
+    saveDetailsButton.addEventListener("click", function() {
+        const tripDate = document.getElementById("tripDate").value;
+        const receiptType = document.getElementById("receiptType").value;
+        const dailyAllowance = parseFloat(document.getElementById("dailyAllowance").value) || 0;
+        const disableDays = document.getElementById("disableDays").checked;
+        const carDistance = parseFloat(document.getElementById("carDistance").value) || 0;
 
-        // Calculate reimbursement
-        const dailyAllowanceRate = 15.0;
-        const mileageRate = 0.3;
+        // Calculate reimbursement for this entry
+        let entryAmount = 0;
+        // ... (calculate entryAmount)
 
-        const dailyAllowanceReimbursement = dailyAllowanceRate * numberOfDays;
-        const mileageReimbursement = mileageRate * drivenDistance;
-        const receiptReimbursement = receiptAmount;
+        // Add entry details to the saved details box
+        const entryDetails = `Date: ${tripDate}, Type: ${receiptType}, Amount: $${entryAmount.toFixed(2)}`;
+        savedDetailsBox.innerHTML += `<p>${entryDetails}</p>`;
+    });
 
-        const totalReimbursementAmount = dailyAllowanceReimbursement + mileageReimbursement + receiptReimbursement;
-
-        // Display the total reimbursement amount
-        totalReimbursement.textContent = `Total Reimbursement: $${totalReimbursementAmount.toFixed(2)}`;
+    clearDetailsButton.addEventListener("click", function() {
+        savedDetailsBox.innerHTML = "";
     });
 });

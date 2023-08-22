@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User View</title>
-    <link rel="stylesheet" href="style.css">
+    <title>User Reimbursement Claims</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <h1>User View</h1>
+<h1>User Reimbursement Claims</h1>
 
-    <h2>Create Reimbursement Claim</h2>
-    <form id="claim-form">
-        <label for="trip-date">Trip Date:</label>
-        <input type="date" id="trip-date" name="trip-date" required><br>
+<form id="claimForm">
+    <label for="tripDate">Trip Date:</label>
+    <input type="date" id="tripDate" required><br><br>
 
-        <label for="receipt-type">Receipt Type:</label>
-        <select id="receipt-type" name="receipt-type">
-            <option value="Taxi">Taxi</option>
-            <option value="Hotel">Hotel</option>
-            <!-- Add more receipt types here -->
-        </select><br>
+    <label for="receiptType">Receipt Type:</label>
+    <select id="receiptType">
+        <option value="taxi">Taxi</option>
+        <option value="hotel">Hotel</option>
+        <option value="plane">Plane Ticket</option>
+        <option value="train">Train</option>
+    </select><br><br>
 
-        <label for="receipt-amount">Receipt Amount:</label>
-        <input type="number" id="receipt-amount" name="receipt-amount" required><br>
+    <label for="dailyAllowance">Daily Allowance (days):</label>
+    <input type="number" id="dailyAllowance"><br><br>
 
-        <label for="number-of-days">Number of Days:</label>
-        <input type="number" id="number-of-days" name="number-of-days"><br>
+    <label for="disableDays">Disable Daily Allowance:</label>
+    <input type="checkbox" id="disableDays"><br><br>
 
-        <label for="driven-distance">Driven Distance (km):</label>
-        <input type="number" id="driven-distance" name="driven-distance"><br>
+    <label for="carDistance">Car Distance (km):</label>
+    <input type="number" id="carDistance"><br><br>
 
-        <button type="submit">Submit</button>
-    </form>
+    <output id="totalReimbursement"></output><br><br>
+</form>
 
-    <h2>Total Reimbursement</h2>
-    <p id="total-reimbursement">Total Reimbursement: $0.00</p>
-</div>
+<div id="savedDetailsBox" style="border: 1px solid #ccc; padding: 10px;"></div>
+
+<button id="saveDetailsButton">Save Details</button>
+<button id="clearDetailsButton">Clear Details</button>
+
+<ul id="reimbursementList"></ul>
+
 <script src="user-script.js"></script>
 </body>
 </html>
