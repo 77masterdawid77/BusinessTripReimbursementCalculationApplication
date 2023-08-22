@@ -1,6 +1,6 @@
 <servlet>
     <servlet-name>ReimbursementServlet</servlet-name>
-    <servlet-class>com.yourcompany.ReimbursementServlet</servlet-class>
+    <servlet-class>ReimbursementServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 <servlet-name>ReimbursementServlet</servlet-name>
