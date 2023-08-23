@@ -53,3 +53,6 @@ User Reimbursement (user.html)
 Input trip details including date, receipt type, daily allowance, disable days, and car distance.
 Click "Add Entry" to calculate reimbursement for each entry.
 Click "Clear Entries" to clear the list of saved entries.
+
+
+If this dosn't work then please try to import this project into an IDE and run the MainApp.java file
