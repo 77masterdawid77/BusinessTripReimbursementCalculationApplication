@@ -1,49 +1,55 @@
-Extract the Files:
-Extract the contents of the downloaded ZIP file to a directory of your choice.
+# Business Trip Reimbursement Application
 
-Setup Backend:
-Before running the program, ensure that you have the Java development environment and Maven installed on your system.
+This is a simple web application that allows users to calculate and track their business trip reimbursements. The application provides different functionalities for both administrators and users.
 
-Admin Configuration:
+## Prerequisites
 
-Open the admin.html file located in the src/main/resources/static directory using a web browser.
-Configure the rates for daily allowance and car mileage using the input fields.
-Define the available receipt types and their rates as needed.
-Build Backend:
+- Java Development Kit (JDK) 11 or higher installed on your system.
+- Apache Maven installed on your system.
+- Web browser to interact with the application.
 
-Open a terminal/command prompt and navigate to the extracted project directory.
-Run the following commands:
-bash
-Copy code
-cd BusinessTripReimbursementCalculationApplication
-mvn clean install
-Run Backend:
+## Setup
 
-Run the following command to start the backend server:
-arduino
-Copy code
-mvn spring-boot:run
-The backend server will start at http://localhost:8080.
-Open User Interface:
+1. Clone or download this repository to your local machine.
 
-Open a web browser and go to http://localhost:8080/user.html.
-User Interaction:
+2. Open a command prompt or terminal.
 
-Click the "Add Reimbursement" button to add selected receipts to the list.
-Configure the trip date, add receipts, daily allowance, and car mileage as needed.
-The "Total Reimbursement" amount will be automatically calculated based on admin settings and user inputs.
-Click the "Submit" button to send reimbursement data (customize this part based on your application's needs).
-Admin Interaction:
+3. Navigate to the root directory of the project using the `cd` command.
 
-Open the admin.html file located in the src/main/resources/static directory using a web browser.
-Update the rates for daily allowance and car mileage if needed.
-Define the available receipt types and their rates.
-Configure reimbursement limits for single calculation results.
-User Interaction (Continued):
+## Building and Running
 
-After configuring admin settings, go back to the user.html interface.
-Follow step 7 to calculate the reimbursement amount based on the updated admin settings.
-Finish and Clean Up:
+### Admin Interface
 
-When you're done testing the application, close the web browser and stop the backend server (CTRL+C in the terminal).
-You can now navigate through the files and customize the program further if needed.
+1. Navigate to the `admin` directory using the command prompt.
+
+2. Compile the Java classes using the following command:
+
+   ```shell
+   mvn compile
+
+Run the application using the following command:
+mvn exec:java -Dexec.mainClass="com.example.AdminApp"
+
+Open your web browser and go to http://localhost:8080/admin.html to access the admin settings.
+
+User Interface
+Navigate to the user directory using the command prompt.
+
+Compile the Java classes using the following command:
+
+mvn compile
+
+Run the application using the following command:
+mvn exec:java -Dexec.mainClass="com.example.UserApp"
+
+Open your web browser and go to http://localhost:8080/user.html to access the user reimbursement interface.
+
+Usage
+Admin Settings (admin.html)
+Configure daily allowance and car mileage rates.
+Edit available receipt types.
+Set reimbursement limits for calculations.
+User Reimbursement (user.html)
+Input trip details including date, receipt type, daily allowance, disable days, and car distance.
+Click "Add Entry" to calculate reimbursement for each entry.
+Click "Clear Entries" to clear the list of saved entries.
