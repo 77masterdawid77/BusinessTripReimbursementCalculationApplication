@@ -14,12 +14,36 @@ public class ReimbursementServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Handle GET request
-        // ... Your code here ...
+        String action = request.getParameter("action");
+        if ("getRate".equals(action)) {
+            // Return the reimbursement rate
+            double rate = 15.0; // Example: Initial rate of $15/day
+            response.getWriter().write(Double.toString(rate));
+        } else {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("Invalid action");
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Handle POST request
-        // ... Your code here ...
+        String action = request.getParameter("action");
+        if ("updateRate".equals(action)) {
+            String newRateStr = request.getParameter("newRate");
+            if (newRateStr != null) {
+                double newRate = Double.parseDouble(newRateStr);
+                // Update the reimbursement rate
+                // ... Your code to update the rate ...
+
+                response.getWriter().write("Rate updated successfully");
+            } else {
+                response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                response.getWriter().write("Invalid new rate");
+            }
+        } else {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("Invalid action");
+        }
     }
 }

@@ -20,7 +20,7 @@ public class MainApp {
         List<String> availableReceiptTypes = new ArrayList<>();
         availableReceiptTypes.add("Taxi");
         availableReceiptTypes.add("Hotel");
-        // ... Add more receipt types
+
 
         // Simulate rates configuration
         RateConfiguration rates = new RateConfiguration(15.0, 0.3);
@@ -53,7 +53,7 @@ public class MainApp {
 
 
     private static void startWebServer() throws IOException {
-        int port = 8080; // You can change this to any available port
+        int port = 8080;
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         // Set up the context for serving static files

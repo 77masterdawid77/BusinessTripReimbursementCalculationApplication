@@ -22,5 +22,5 @@ public class AdminView {
         claim.setTotalReimbursement(Math.min(claim.getTotalReimbursement(), limit));
     }
 
-    // Other methods for UI interactions specific to administrators
+
 }

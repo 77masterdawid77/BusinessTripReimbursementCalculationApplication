@@ -32,5 +32,5 @@ public class UserView {
         return receiptReimbursement + claim.getTotalReimbursement();
     }
 
-    // Other methods with the rates parameter
+
 }

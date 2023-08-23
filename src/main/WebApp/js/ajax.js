@@ -1,11 +1,30 @@
-function calculateReimbursement() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "C:\\Users\\44746\\IdeaProjects\\BusinessTripReimbursementCalculationApplication/reimbursement?action=calculateReimbursement", true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var reimbursementAmount = xhr.responseText;
-            // Update the UI with the reimbursement amount
+$(document).ready(function() {
+    // Get the current reimbursement rate
+    $.ajax({
+        type: "GET",
+        url: "reimbursement?action=getRate",
+        success: function(rate) {
+            $("#currentRate").text(rate);
+        },
+        error: function() {
+            $("#currentRate").text("Error retrieving rate");
         }
-    };
-    xhr.send();
-}
+    });
+
+    // Update the reimbursement rate
+    $("#updateRateBtn").click(function() {
+        var newRate = $("#newRate").val();
+
+        $.ajax({
+            type: "POST",
+            url: "reimbursement?action=updateRate",
+            data: { newRate: newRate },
+            success: function(response) {
+                $("#updateStatus").text(response);
+            },
+            error: function() {
+                $("#updateStatus").text("Error updating rate");
+            }
+        });
+    });
+});

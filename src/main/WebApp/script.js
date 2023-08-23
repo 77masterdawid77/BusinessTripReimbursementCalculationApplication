@@ -7,13 +7,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        // Replace these conditions with your actual login logic
-        if (username === "user123" && password === "user_password") {
-            window.location.href = "user.html"; // Redirect to user.html
-        } else if (username === "admin456" && password === "admin_password") {
-            window.location.href = "admin.html"; // Redirect to admin.html
+        // Perform authentication logic here (replace with your actual logic)
+        if (username === "admin" && password === "adminpass") {
+            // Redirect to admin.html if user is an admin
+            window.location.href = "admin.html";
+        } else if (username === "user" && password === "userpass") {
+            // Redirect to user.html if user is a regular user
+            window.location.href = "user.html";
         } else {
-            alert("Invalid username or password");
+            alert("Invalid username or password. Please try again.");
         }
     });
 });
